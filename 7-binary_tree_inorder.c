@@ -1,26 +1,26 @@
 #include "binary_trees.h"
 
 /**
-* binary_tree_preorder - function that goes through a binary tree
-*							using pre-order traversal
+* binary_tree_inorder - function that goes through a binary tree
+*						using in-order traversal
 * @tree: pointer to root
 * @func: pointer to a function
 */
 
-void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
+void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
 {
 	if (!tree || !func)
 		return;
 
-	// visit root
 	// visit left
+	// visit root
 	// visit right
 
+	
+	binary_tree_inorder(tree->left, func);
 	func(tree->n);
-	binary_tree_preorder(tree->left, func);
-	binary_tree_preorder(tree->right, func);
+	binary_tree_inorder(tree->right, func);
 }
-
 
 
 
@@ -53,6 +53,6 @@ void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 //     root->right->right = binary_tree_node(root->right, 512);
 
 //     binary_tree_print(root);
-//     binary_tree_preorder(root, &print_num);
+//     binary_tree_inorder(root, &print_num);
 //     return (0);
 // }
