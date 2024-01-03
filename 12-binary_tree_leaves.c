@@ -1,13 +1,10 @@
 #include "binary_trees.h"
 
+
 /**
-* binary_tree_inorder - function that goes through a binary tree
-*						using in-order traversal
+* binary_tree_leaves - counts the leaves in a binary tree
 * @tree: pointer to root
-* @func: pointer to a function
 */
-
-
 size_t binary_tree_leaves(const binary_tree_t *tree)
 {
 	if (!tree)
